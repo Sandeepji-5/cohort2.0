@@ -1,2 +1,0 @@
-const mogoose  = require('mongoose')
-
