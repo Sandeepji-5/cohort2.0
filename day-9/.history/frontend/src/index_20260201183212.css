@@ -1,0 +1,94 @@
+*{
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body, 
+#root{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+
+html{
+  background: #000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.notes {
+  display: flex;
+  flex-wrap: wrap;  
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem;
+  background: linear-gradient(135deg, #232526 0%, #414345 100%);
+  min-height: 100vh;
+}
+
+.note {
+  min-height: 7rem;
+  min-width: 20rem;
+  max-width: 24rem;
+  background: linear-gradient(120deg, #8e726b, #926565 65%);
+  margin: 0;
+  border-radius: 1.25rem;
+  color: #f5fafd;
+  padding: 1.25rem 1.75rem;
+  box-shadow: 0 4px 20px rgba(40, 0, 0, 0.12),
+              0 1.5px 2.5px rgba(100, 10, 0, 0.10);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: transform 0.17s, box-shadow 0.17s;
+}
+
+.note:hover {
+  transform: translateY(-6px) scale(1.025);
+  box-shadow: 0 10px 32px rgba(70, 0, 0, 0.21),
+              0 2.5px 7.5px rgba(120, 30, 0, 0.15);
+  background: linear-gradient(110deg, #a97786 5%, #b48d6b 95%);
+}
+
+.note h1 {
+  font-size: 1.25rem;
+  margin: 0 0 .25rem 0;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #fffbea;
+}
+
+.note p {
+  font-size: 1rem;
+  color: #ffe664;
+  margin: 0;
+  line-height: 1.35;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(90, 70, 0, 0.08);
+}
+
+button {
+  background: linear-gradient(90deg, #b48d6b 20%, #a97786 80%);
+  color: #fffbea;
+  border: none;
+  border-radius: 1em;
+  padding: 0.75em 2em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(70, 40, 0, 0.10);
+  transition: background 0.17s, transform 0.15s, box-shadow 0.17s;
+  cursor: pointer;
+  margin: 1em auto 2em auto;
+  display: block;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #a97786 15%, #ffe664 95%);
+  color: #432006;
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 6px 18px rgba(120, 30, 0, 0.18);
+}
