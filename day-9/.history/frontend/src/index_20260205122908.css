@@ -1,0 +1,378 @@
+/* Base Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  width: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(115deg, #221742 60%, #2d1742 100%);
+  min-height: 100vh;
+  /* Prevent horizontal scroll due to full-viewport child widths */
+  overflow-x: hidden;
+}
+
+/* Notes - grid, prevent overlap on 1010x603 & others */
+.notes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.3rem;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2.3rem;
+  max-width: 1200px;
+  width: 100%;
+  margin: 2rem auto;
+  min-height: 70vh;
+  transition: gap 0.18s;
+  box-sizing: border-box;
+}
+
+.note {
+  background: linear-gradient(125deg, #9272ca 20%, #8e726b 50%, #926565 90%);
+  border-radius: 1.25rem;
+  color: #f5fafd;
+  padding: 1.5rem 2rem 2rem 2rem;
+  box-shadow: 0 2px 18px 0 rgba(80, 0, 80, 0.10), 0 8px 32px 0 rgba(40, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  transition: transform 0.18s, box-shadow 0.20s, background 0.18s;
+  max-width: 420px;
+  width: 100%;
+  margin: 0 auto 2rem auto;
+  box-sizing: border-box;
+  /* Prevent note from spilling outside parent container on small screens */
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Fix: For 900px–1100px wide screens, ensure two columns without overlap */
+@media (max-width: 1100px) and (min-width: 900px) {
+  .notes {
+    grid-template-columns: repeat(2, minmax(320px, 1fr));
+    gap: 2.6rem;
+    padding: 2.2rem 1.5rem 2.5rem 1.5rem;
+    max-width: 100vw;
+    width: 100%;
+  }
+  .note {
+    max-width: 99vw;
+    width: 94vw;
+    margin: 0 auto 2rem auto;
+  }
+}
+
+/* Previous mobile breakpoints */
+@media (max-width: 599px) {
+  .notes {
+    padding: 1rem 0.5rem;
+    gap: 1rem;
+    width: 100%;
+    max-width: 100vw;
+    grid-template-columns: 1fr;
+  }
+  .note {
+    margin: 0 auto 1rem auto;
+    max-width: 97vw;
+    width: 97vw;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+  }
+}
+
+/* Prevent the note from ever fully touching the screen edge */
+@media (max-width: 400px) {
+  .note {
+    max-width: 96vw;
+    width: 96vw;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+  }
+}
+
+.note:hover {
+  transform: translateY(-7px) scale(1.03);
+  box-shadow: 0 12px 34px rgba(100, 50, 180, 0.18),
+              0 6px 18px rgba(150, 70, 100, 0.15);
+  background: linear-gradient(115deg, #b48d6b 15%, #a97786 95%);
+}
+
+.note h1 {
+  font-size: 1.33rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: #fffbea;
+  margin-bottom: 0.3em;
+  overflow-wrap: break-word;
+  text-align: left;
+}
+
+.note p {
+  font-size: 1.07rem;
+  color: #ffe664;
+  margin-bottom: 1em;
+  line-height: 1.45;
+  font-weight: 500;
+  text-shadow: 0 1px 2px rgba(90, 70, 0, 0.09);
+  overflow-wrap: break-word;
+  /* Prevent text overflow on small screens */
+  word-break: break-word;
+}
+
+.noteBtn {
+  display: flex;
+  gap: 1em;
+  justify-content: center;
+  width: 100%;
+  margin-top: auto;
+}
+.noteBtn button {
+  width: 48%;
+  min-width: 80px;
+  max-width: 200px;
+  font-size: 1rem;
+  padding: 0.75em;
+  box-sizing: border-box;
+}
+
+button {
+  background: linear-gradient(93deg, #b48d6b 30%, #a97786 99%);
+  color: #fffbea;
+  border: none;
+  border-radius: 1em;
+  padding: 0.75em 2em;
+  font-size: 1.1rem;
+  font-weight: bold;
+  box-shadow: 0 2px 10px rgba(70, 40, 0, 0.10);
+  transition: background 0.16s, transform 0.15s, box-shadow 0.16s, color 0.13s;
+  cursor: pointer;
+  margin: 1em auto 2em auto;
+  display: block;
+  min-width: 120px;
+  max-width: 300px;
+  width: 80%;
+}
+
+@media (max-width: 530px) {
+  button, .noteBtn button, form button {
+    font-size: 0.95em;
+    padding: 0.55em 1em;
+    min-width: 90px;
+    max-width: 95vw;
+    width: 94%;
+  }
+}
+
+/* Keep button width sensible for the form submit */
+form button {
+  width: 70%;
+  min-width: 120px;
+  max-width: 280px;
+  margin-bottom: 0.35em;
+  margin-top: 0.1em;
+  display: block;
+  align-self: center;
+}
+
+button:hover {
+  background: linear-gradient(97deg, #a97786 12%, #ffe664 88%);
+  color: #432006;
+  transform: translateY(-2px) scale(1.045);
+  box-shadow: 0 8px 20px rgba(120, 30, 0, 0.19);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #fffbea;
+  padding: 2em 1.5em 1.5em 1.5em;
+  margin: 2em auto;
+  border-radius: 1.3em;
+  box-shadow: 0 3px 18px rgba(160, 100, 60, 0.14), 0 0.2px 2px rgba(140, 120, 40, 0.09);
+  max-width: 420px;
+  width: 100%;
+  gap: 1.2em;
+  box-sizing: border-box;
+}
+
+form h1 {
+  margin-bottom: 0.8em;
+  color: #532383;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+form input[type="text"] {
+  width: 100%;
+  padding: 0.85em 1.2em;
+  margin-bottom: 0.65em;
+  border: 1.5px solid #b48d6b;
+  border-radius: 0.8em;
+  font-size: 1.06rem;
+  outline: none;
+  transition: border-color 0.14s, box-shadow 0.14s;
+  background: #fffaf4;
+  color: #4a3325;
+}
+
+form input[type="text"]:focus {
+  border-color: #a97786;
+  box-shadow: 0 2px 11px rgba(140, 120, 40, 0.10);
+}
+
+/* Responsive breakpoints - improved grid for various widths */
+@media (max-width: 1200px) {
+  .notes {
+    grid-template-columns: repeat(2, minmax(310px, 1fr));
+    max-width: 98vw;
+    width: 100%;
+    padding: 1.5rem;
+    gap: 1.8rem;
+  }
+  .note {
+    max-width: 98vw;
+    width: 96vw;
+    margin: 0 auto 1.2rem auto;
+  }
+}
+@media (max-width: 850px) {
+  .notes {
+    grid-template-columns: 1fr;
+    max-width: 100vw;
+    width: 100%;
+    padding: 1.2rem 0.4rem;
+    gap: 1.1rem;
+  }
+  .note {
+    max-width: 98vw;
+    width: 97vw;
+    padding: 1.1rem 0.6rem 1.2rem 0.6rem;
+    margin: 1rem auto 1rem auto;
+    font-size: 0.98rem;
+  }
+  form {
+    max-width: 99vw;
+    padding: 1em 0.45em 1em 0.45em;
+    width: 97vw;
+  }
+}
+@media (max-width: 530px) {
+  .notes {
+    padding: 0.45rem 0.3rem 0.63rem 0.3rem;
+    gap: 0.5rem;
+    grid-template-columns: 1fr;
+    max-width: 100vw;
+    width: 100%;
+  }
+  .note {
+    border-radius: 0.53rem;
+    padding: 0.65rem 0.24rem 0.98rem 0.24rem;
+    font-size: 0.93rem;
+    max-width: 97vw;
+    width: 97vw;
+    margin: 0.7rem auto 0.7rem auto;
+  }
+  form {
+    padding: 0.7em 0.18em 0.8em 0.18em;
+    gap: 0.7em;
+    max-width: 99vw;
+    width: 98vw;
+    margin: 0.7em auto;
+  }
+  form input[type="text"] {
+    font-size: 0.93em;
+    padding: 0.5em 0.3em;
+  }
+  .noteBtn button,
+  button, 
+  form button {
+    font-size: 0.89em;
+    padding: 0.49em 1em;
+    width: 93%;
+    min-width: 90px;
+    max-width: 98vw;
+    box-sizing: border-box;
+  }
+  .note h1 {
+    font-size: 1.06rem;
+  }
+  .note p {
+    font-size: 0.91rem;
+  }
+}
+
+/* For Samsung Galaxy S8 Portrait and similar (~360x740) */
+@media only screen and (max-width: 380px) and (max-height: 760px) {
+  .notes {
+    grid-template-columns: 1fr;
+    padding: 0.16rem 0.13rem 0.55rem 0.13rem !important;
+    gap: 0.38rem;
+    max-width: 100vw;
+    width: 100%;
+  }
+  .note {
+    border-radius: 0.47rem;
+    padding: 0.55rem 0.18rem 0.8rem 0.18rem;
+    font-size: 0.89rem;
+    max-width: 96vw;
+    width: 96vw;
+    margin: 0.55rem auto 0.55rem auto;
+  }
+  form {
+    padding: 0.5em 0.09em 0.67em 0.09em;
+    gap: 0.56em;
+    max-width: 98vw;
+    width: 98vw;
+    margin: 0.55em auto;
+  }
+  form input[type="text"] {
+    font-size: 0.89em;
+    padding: 0.41em 0.17em;
+  }
+  .noteBtn button,
+  button, 
+  form button {
+    font-size: 0.84em;
+    padding: 0.38em 0.64em;
+    min-width: 80px;
+    width: 93%;
+    box-sizing: border-box;
+  }
+  .note h1 {
+    font-size: 0.98rem;
+  }
+  .note p {
+    font-size: 0.89rem;
+  }
+}
+
+/* Slightly more space for really short landscape screens */
+@media only screen and (max-width: 760px) and (max-height: 430px) {
+  .notes {
+    padding-bottom: 0.2rem;
+    gap: 0.32rem;
+  }
+  .note {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: #351b48;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a97786;
+  border-radius: 10px;
+}
