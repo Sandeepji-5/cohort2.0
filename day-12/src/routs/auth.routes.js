@@ -40,5 +40,9 @@ authRouter.post('/register', async(req, res)=>{
     }, process.env.JWT_SECRET)
 })
 
+authRouter.post('/protected',async(req, res)=>{
+    
+})
+
 
 module.exports = authRouter
