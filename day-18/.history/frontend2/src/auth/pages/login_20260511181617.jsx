@@ -1,0 +1,46 @@
+import { useState } from "react";
+import { login } from "../services/auth.api.js";
+const   Login = () => {
+    const [userName, setUserName] = useState("");
+   
+    const [password, setPassword] = useState("");
+    
+  
+        function handleFormSubmit(e){   
+        e.preventDefault();
+    
+        login(userName, password).then(res=>{
+            console.log(res);
+        }).catch(err=>{
+            console.log(err);
+        })      
+
+
+    }
+
+
+    return (
+        <main>
+            <div className='form-container'>
+                <h1>Login</h1>
+                <form onSubmit={handleFormSubmit}>
+                   <input
+                    onInput={(e)=>setUserName(e.target.value)}
+                    type="text" 
+                    name='username'
+                    placeholder="Enter the Username "/>
+                   
+                    <input
+                    onInput={(e)=>setPassword(e.target.value)}
+                    type="password" 
+                    name='password'
+                    placeholder="Enter the Password "/>
+                    <button type='submit'>Click</button>
+                </form>
+            </div>
+        </main>             
+    )
+}   
+
+
+export default Login;

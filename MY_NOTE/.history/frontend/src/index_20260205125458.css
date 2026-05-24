@@ -1,0 +1,97 @@
+/* ================= PROFESSIONAL COLOR THEME ONLY ================= */
+:root {
+  --sky-blue: #2ea8ff;
+  --sky-blue-dark: #1b7fcc;
+  --sky-blue-light: #e9f5ff;
+
+  --white: #ffffff;
+  --off-white: #f7f9fc;
+
+  --black: #0f172a;
+  --gray: #475569;
+
+  --border: #e2e8f0;
+}
+
+/* ===== PAGE BACKGROUND ===== */
+html,
+body,
+#root {
+  background: linear-gradient(
+    180deg,
+    var(--sky-blue-light),
+    var(--off-white)
+  );
+  color: var(--black);
+}
+
+/* ===== FORM COLORS ===== */
+form {
+  background: var(--white);
+  border: 1px solid var(--border);
+}
+
+form h1 {
+  color: var(--black);
+}
+
+form input {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  color: var(--black);
+}
+
+form input:focus {
+  border-color: var(--sky-blue);
+  box-shadow: 0 0 0 3px rgba(46, 168, 255, 0.25);
+}
+
+/* ===== GLOBAL BUTTON COLORS ===== */
+button {
+  background: var(--sky-blue);
+  color: var(--white);
+}
+
+button:hover {
+  background: var(--sky-blue-dark);
+  color: var(--white);
+}
+
+/* ===== SHOW / HIDE BUTTON ===== */
+.toggle-notes button {
+  background: transparent;
+  color: var(--sky-blue-dark);
+  border: 2px solid var(--sky-blue);
+}
+
+.toggle-notes button:hover {
+  background: var(--sky-blue);
+  color: var(--white);
+}
+
+/* ===== NOTES CARD COLORS ===== */
+.note {
+  background: var(--white);
+  color: var(--black);
+  border: 1px solid var(--border);
+}
+
+.note h1 {
+  color: var(--black);
+}
+
+.note p {
+  color: var(--gray);
+}
+
+/* ===== NOTE ACTION BUTTONS ===== */
+.noteBtn button {
+  background: var(--sky-blue-light);
+  color: var(--sky-blue-dark);
+  border: 1px solid var(--border);
+}
+
+.noteBtn button:hover {
+  background: var(--sky-blue);
+  color: var(--white);
+}

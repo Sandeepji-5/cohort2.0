@@ -1,0 +1,38 @@
+import React from 'react'
+import "../../style/feed.scss"
+import Post from '../component/Post'
+
+import { usePost } from '../hook/usePost';
+import { useEffect } from 'react';
+import Nav from '../../shared/Nav';
+const Feed = () => {
+    const { loading, feed, handleGetFeed, handleLikePost, handleUnlikePost } = usePost();
+    
+    useEffect(() => {
+        handleGetFeed();
+    }, []);
+
+    if(loading || !feed) {
+        return <div> Feed is Loading...</div>
+    }   
+
+
+    console.log("feed", feed);
+
+    return (
+        <main className="feed-page">
+            <Nav />
+            <div className="feed">
+                <div className="posts">
+                    {feed.map((post) => {
+                       return  <Post key={post._id} user={post.user} post={post} loading={loading} handleLikePost={handleLikePost} handleUnlikePost={handleUnlikePost} />
+                    })}
+                </div>
+                
+            </div>
+            </main>
+     
+    );
+}
+
+export default Feed;

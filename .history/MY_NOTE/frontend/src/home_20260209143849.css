@@ -1,0 +1,57 @@
+
+
+
+/* Home Page General Styles */
+body {
+  background: linear-gradient(120deg, #e9eafc 0%, #fdded6 100%);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Main content area styles */
+.home-main-content {
+  max-width: 620px;
+  background: #fff;
+  border-radius: 1.2rem;
+  box-shadow: 0 6px 28px rgba(40,50,89,0.13);
+  margin: 2rem auto;
+  padding: 2.3rem 2.5rem 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Welcome header styles */
+.home-main-content h1 {
+  font-size: 2.1rem;
+  color: #2446b8;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 8px rgba(36,70,184,0.06);
+  text-align: center;
+}
+
+.home-main-content p {
+  font-size: 1.08rem;
+  color: #383839;
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .home-main-content {
+    padding: 1.2rem 0.8rem 1rem 0.8rem;
+    margin: 1rem 0.7rem;
+  }
+  .home-main-content h1 {
+    font-size: 1.35rem;
+  }
+  .home-main-content p {
+    font-size: 0.98rem;
+  }
+}

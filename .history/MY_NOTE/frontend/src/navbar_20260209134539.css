@@ -1,0 +1,39 @@
+.navbar-container {
+  background: linear-gradient(90deg, #2a5298 0%, #1e3c72 100%);
+  padding: 2rem 1.5rem 1.7rem 1.5rem;
+  border-radius: 1.3rem;
+  margin: 2rem auto 1.5rem auto;
+  box-shadow: 0 6px 36px rgba(23, 48, 107, 0.11);
+  max-width: 540px;
+  text-align: center;
+}
+
+.navbar-container h1 {
+  font-family: 'Playfair Display', serif;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.8rem;
+}
+
+.navbar-container p {
+  color: #e6ecfb;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .navbar-container {
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
+    max-width: 98%;
+  }
+  .navbar-container h1 {
+    font-size: 1.25rem;
+  }
+  .navbar-container p {
+    font-size: 0.98rem;
+  }
+}

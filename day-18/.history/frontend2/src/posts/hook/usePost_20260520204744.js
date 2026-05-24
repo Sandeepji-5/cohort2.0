@@ -1,0 +1,1 @@
+import {getFeed} from "../../api/post.api";

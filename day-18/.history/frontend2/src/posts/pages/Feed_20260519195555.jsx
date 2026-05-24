@@ -1,0 +1,27 @@
+
+const Feed = () => {
+
+
+
+
+
+
+
+
+
+
+
+
+    return (
+        <div className="feed">
+            <div className="posts">
+
+
+                <div className="user">
+                    <img src="" alt="" />                   
+                    
+                </div>
+            </div>
+        </div>
+    );
+}

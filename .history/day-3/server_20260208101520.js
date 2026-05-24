@@ -1,0 +1,22 @@
+const express = require('express')
+
+const app = express();
+
+app.use(express.json())
+const notes = [];
+
+app.post('/notes',(req, res)=>{
+
+    notes.push(req.body)
+    res.send("note created from the Post...")
+})
+
+app.get('/notes',(req, res)=>{
+    res.send(notes);
+    console.log(req.body)
+})
+
+app.listen(3000,()=>{
+    console.log("Server Is Running...")
+})
+

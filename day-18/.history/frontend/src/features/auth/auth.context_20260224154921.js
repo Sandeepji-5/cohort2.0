@@ -1,0 +1,18 @@
+import {createContext, useState, useEffect } from 'react'
+import {login, register, getMe} from ""
+
+export  const AuthContext  = createContext();
+
+
+export function AuthProvider({children}){
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(false)
+
+
+    const handleLogin = async (email, password)=>{
+
+    }
+
+    
+
+}

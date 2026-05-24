@@ -1,0 +1,31 @@
+.forNote {
+  margin: 32px auto 0 auto;
+  max-width: 200px;
+  text-align: center;
+  background: #f8faff;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(100,115,140,0.10);
+  padding: 24px 16px;
+  border: 1px solid #e3e7f8;
+}
+
+.forNote p {
+  font-size: 1.18rem;
+  color: #3044a8;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0;
+  margin-top: 0;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive Styling */
+@media (max-width: 540px) {
+  .forNote {
+    max-width: 95vw;
+    padding: 14px 6px;
+    border-radius: 7px;
+  }
+  .forNote p {
+    font-size: 1rem;
+  }
+}

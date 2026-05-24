@@ -1,0 +1,28 @@
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  color: #ea4747;
+  text-shadow: 0 1px 6px rgba(6,16,69,0.14);
+  background: #670a0a;
+}
+
+.home-container h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 1rem;
+  letter-spacing: 0.03em;
+}
+
+.home-container p {
+  font-size: 1.15rem;
+  font-weight: 500;
+  max-width: 440px;
+  line-height: 1.5;
+  text-align: center;
+  background: rgba(36, 70, 184, 0.13);
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+}

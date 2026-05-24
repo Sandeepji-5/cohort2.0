@@ -1,0 +1,35 @@
+import React from 'react'
+import userModel from '../../../../backend/src/models/userModel';
+
+const Post = (user, ) => {
+    return (
+         <div className="posts">
+                <div className="user">
+                    <div className="imgwrapper">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdXzslwRWyk0O7vACXGRzFP7c1GU0j4kIkWQ&s" alt="User Avatar" />
+                    </div>
+                    <p>{user.username}</p>
+                </div>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdXzslwRWyk0O7vACXGRzFP7c1GU0j4kIkWQ&s" alt="Post Image " />
+
+                <div className="icons">
+                    <div className="left">
+                        <button></button>
+                        <button></button>
+                        <button></button>
+
+                    </div>
+                    <div className="right">
+                        <button></button>
+                    </div>
+                </div>
+
+
+                <div className="bottom">
+                    <p className="caption">Caption</p>
+                </div>
+            </div>
+    )
+}       
+
+export default Post;

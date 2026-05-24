@@ -1,0 +1,22 @@
+
+
+.forNote p {
+  font-size: 1.18rem;
+  color: #3044a8;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 0;
+  margin-top: 0;
+  letter-spacing: 0.01em;
+}
+
+/* Responsive Styling */
+@media (max-width: 540px) {
+  .forNote {
+    max-width: 95vw;
+    padding: 14px 6px;
+    border-radius: 7px;
+  }
+  .forNote p {
+    font-size: 1rem;
+  }
+}

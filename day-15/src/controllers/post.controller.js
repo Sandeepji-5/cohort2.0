@@ -57,7 +57,7 @@ async function createPostController(req, res) {
     })
 }
 
-
+// User ne Jitne Api create kri hai usko show karana...
 async function getPostController(req, res) {
 
 const token = req.cookies.token;
@@ -87,8 +87,7 @@ const posts = await postModel.find({ user: userId });
     })
 }
 
-
-
+// 
 async function getPostDetailsController(req, res){
 
 const token  =  req.cookies.token;
